@@ -2,7 +2,7 @@ import { EXPERIENCES } from "../constants";
 
 const Experience = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 ">
+    <div className="border-b border-gray-300 pb-4 ">
       <h1 className="my-20 text-center text-4xl">Experience</h1>
       <div>
         {EXPERIENCES.map((experience, index) => (
@@ -11,11 +11,23 @@ const Experience = () => {
               <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
             </div>
             <div className="w-full max-w-xl lg:w-3/4">
-            <h5>{experience.role} -<span className="text-slate-500 text-sm">{experience.company}</span></h5>
-            <p className="text-sm mb-4 text-neutral-400">{experience.description}</p>
-            {experience.technologies.map((tech,index) => 
-            <span key={index} className="mr-2 mt-4 rounded bg-neutral-700 px-2 py-1 text-sm font-medium text-purple-500">{tech}</span>
-            )}
+              <h5>
+                {experience.role} -
+                <span className="text-slate-500 text-sm">
+                  {experience.company}
+                </span>
+              </h5>
+              <p className="text-sm mb-4 text-neutral-400">
+                {experience.description}
+              </p>
+              {experience.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="mr-2 mt-4 rounded bg-neutral-700 px-2 py-1 text-sm font-medium text-purple-500"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         ))}
